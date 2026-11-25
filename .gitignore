@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build & TypeScript artifacts
+dist/
+.next/
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment files (keep templates)
+.env
+.env.*
+!.env.example
+!.env.local.example
+
+# Logs & temporary files
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Test coverage & local DB
+coverage/
+prisma/generated/
+*.sqlite
+*.db

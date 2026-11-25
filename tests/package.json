@@ -1,0 +1,45 @@
+{
+  "name": "@surpluss/tests",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "jest --forceExit --detectOpenHandles",
+    "test:verbose": "jest --forceExit --detectOpenHandles --verbose",
+    "test:coverage": "jest --coverage --forceExit"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.9.1",
+    "@surpluss/shared": "*",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.11.5",
+    "@types/supertest": "^6.0.2",
+    "jest": "^29.7.0",
+    "prisma": "^5.9.1",
+    "supertest": "^6.3.4",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.3.3"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": ["**/*.test.ts"],
+    "moduleNameMapper": {
+      "@surpluss/shared": "<rootDir>/../packages/shared/src/index.ts"
+    },
+    "testTimeout": 60000,
+    "globals": {
+      "ts-jest": {
+        "tsconfig": {
+          "strict": true,
+          "esModuleInterop": true,
+          "paths": {
+            "@surpluss/shared": ["../packages/shared/src/index.ts"]
+          }
+        }
+      }
+    }
+  }
+}
